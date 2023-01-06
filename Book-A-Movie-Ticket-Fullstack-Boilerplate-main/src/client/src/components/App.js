@@ -43,6 +43,16 @@ const App = () => {
         <button>Book Now</button>
       </div>
       <div className="last-order">
+        <h4>Last Booking Details</h4>
+        <b>seats</b>
+        <p>A1 : </p>
+        <p>A2 : </p>
+        <p>A3 : </p>
+        <p>A4 : </p>
+        <p>D1 : </p>
+        <p>D2 : </p>
+        <p>slot: </p>
+        <p>movie: </p>
       </div>
     </div>
   </>);
