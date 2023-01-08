@@ -11,13 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.19.0",
     "cors": "^2.8.5",
     "express": "4.17.1",
+    "express-validator": "^6.14.2",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.15",
-    "node-serialize": "0.0.4",
-    "body-parser": "1.19.0"
-  },
-  "devDependencies": {
+    "node-serialize": "0.0.4"
   }
 }

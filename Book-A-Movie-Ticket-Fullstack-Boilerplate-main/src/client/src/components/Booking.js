@@ -13,8 +13,7 @@ const Booking = () => {
     const fetchLastBooking = async () => {
         let response = await fetch('http://localhost:8080/api/booking')
         let data = await response.json()
-        console.log(data)
-        setBookingDetails(data)
+        setBookingDetails(data.lastBooking)
     }
 
     useEffect(() => {
@@ -34,13 +33,23 @@ const Booking = () => {
     }
 
     const onClickBookNow = async () => {
+        console.log(JSON.stringify({curMovie, curSlot, curSeatCount}))
         // POSTing on the api
+        const res = await fetch('http://localhost:8080/api/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ movie: curMovie, slot: curSlot, seats: curSeatCount })
+        })
+        const json = await res.json()
+        console.log(json)
 
         // setting the Last Booking Details
         setBookingDetails({
             movie: curMovie,
             slot: curSlot,
-            seat: curSeatCount
+            seats: curSeatCount
         })
 
         // clearing from localStorage and updating state
