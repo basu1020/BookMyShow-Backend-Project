@@ -12,8 +12,8 @@ app.use(cors())
 
 app.post('/api/booking', async (req, res) => {
     try {
-        // creating the lastbooking
-        bookingDetails = await connection.create({
+       
+        bookingDetails = await connection.create({   // creating new booking details.
             movie : req.body.movie,
             slot: req.body.slot,
             seats: req.body.seats
@@ -27,10 +27,11 @@ app.post('/api/booking', async (req, res) => {
 })
 
 app.get('/api/booking', async (req, res) => {
-
-    const bookings = await connection.find({})
+    
+    // fetching last booking or returning message if there isn't any.
+    const bookings = await connection.findOne().sort({}).limit(1) //this method is fetching last item from database.
     if (bookings) {
-        res.json({lastBooking: bookings[bookings.length - 1]})
+        res.json({lastBooking}) 
     }
     else {
         res.json({message: "no previous booking found"})

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const LastBooking = (props) => {
+const LastBooking = (props) => {  //receives props about booking details from <Booking> component
     const { bookingDetails } = props
 
     return (
@@ -20,7 +20,7 @@ const LastBooking = (props) => {
                         <p><b>slot</b>: {bookingDetails.slot}</p>
                         <p>movie: {bookingDetails.movie}</p>
                     </div>)}
-                {!bookingDetails.movie && <p>no previous booking found</p>}
+                {!bookingDetails.movie && <p>no previous booking found</p>} 
 
             </div>
         </>
