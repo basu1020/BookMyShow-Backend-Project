@@ -113,7 +113,7 @@ const Booking = () => {
                                         <input
                                             type="number"
                                             name={element}
-                                            value={curSeatCount ? curSeatCount[element] : "0"}
+                                            defaultValue={curSeatCount ? curSeatCount[element] : "0"}
                                             min={'0'}
                                             id={`seat-${element}`}
                                             onChange={onChangeNoOfSeat}
