@@ -1,0 +1,160 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-01-25T18:22:49.314Z",
+    "end": "2023-01-25T18:22:49.354Z",
+    "duration": 40,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a7245a13-0ab7-45b8-bb9a-b23efaa5cfa8",
+      "title": "",
+      "fullFile": "D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\__tests__\\backend.test.js",
+      "file": "\\__tests__\\backend.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dca68167-e04d-4ebd-8c10-c7ec2d46cc4c",
+          "title": "bookMovieSchema",
+          "fullFile": "D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\__tests__\\backend.test.js",
+          "file": "\\__tests__\\backend.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"bookMovieSchema\"",
+              "fullTitle": "bookMovieSchema \"before all\" hook in \"bookMovieSchema\"",
+              "timedOut": false,
+              "duration": 24,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "connection = await mongoose.createConnection('mongodb://localhost/testdb', {\n    useNewUrlParser: true,\n    useUnifiedTopology: true,\n});",
+              "err": {},
+              "uuid": "9f7b0a8f-115f-4d2e-ba10-58c67dca3ca9",
+              "parentUUID": "dca68167-e04d-4ebd-8c10-c7ec2d46cc4c",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook in \"bookMovieSchema\"",
+              "fullTitle": "bookMovieSchema \"before each\" hook in \"bookMovieSchema\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "movie = \"Movie A\";\nslot = \"12:00 PM\";\nseats = {\n    A1: 1,\n    A2: 0,\n    A3: 2,\n    A4: 1,\n    D1: 0,\n    D2: 1\n}",
+              "err": {},
+              "uuid": "191bc8db-73fd-4bc3-9e2f-8aa17afb2eb6",
+              "parentUUID": "dca68167-e04d-4ebd-8c10-c7ec2d46cc4c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"bookMovieSchema\"",
+              "fullTitle": "bookMovieSchema \"after all\" hook in \"bookMovieSchema\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await connection.close();",
+              "err": {},
+              "uuid": "453b30d1-e2d1-4ba8-955d-7919eb777821",
+              "parentUUID": "dca68167-e04d-4ebd-8c10-c7ec2d46cc4c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should create a valid bookMovie",
+              "fullTitle": "bookMovieSchema should create a valid bookMovie",
+              "timedOut": false,
+              "duration": 9,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const BookMovie = mongoose.model('BookMovie', bookMovieSchema)\nconst validBookMovie = new BookMovie({ movie, slot, seats });\nvalidBookMovie.validate((error) => {\n    expect(error).toBeFalsy();\n});",
+              "err": {
+                "message": "TypeError: expect is not a function",
+                "estack": "TypeError: expect is not a function\n    at D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\__tests__\\backend.test.js:42:13\n    at D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\node_modules\\mongoose\\lib\\helpers\\promiseOrCallback.js:25:16\n    at D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\node_modules\\mongoose\\lib\\document.js:2291:7\n    at complete (node_modules\\mongoose\\lib\\document.js:2588:5)\n    at D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\node_modules\\mongoose\\lib\\document.js:2576:20\n    at ObjectId.SchemaType.doValidate (node_modules\\mongoose\\lib\\schematype.js:1194:12)\n    at D:\\BlockchainDev\\web2Stuffs\\MernStack_Projects\\BookMyShow-backend\\Book-A-Movie-Ticket-Fullstack-Boilerplate-main\\src\\node_modules\\mongoose\\lib\\document.js:2567:18\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)",
+                "diff": null
+              },
+              "uuid": "41e3bfe4-e52f-49a0-b2da-2e49a8be640a",
+              "parentUUID": "dca68167-e04d-4ebd-8c10-c7ec2d46cc4c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "41e3bfe4-e52f-49a0-b2da-2e49a8be640a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

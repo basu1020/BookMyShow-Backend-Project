@@ -3,6 +3,7 @@ import { movies, slots, seats } from "../data"; //importing info provided from d
 import LastBooking from './LastBooking';
 
 const Booking = () => {
+
     const defaultSeatCount = { A1: "0", A2: "0", A3: "0", A4: "0", D1: "0", D2: "0" } // default seat count
     const [curMovie, setCurMovie] = useState(localStorage.getItem('current-movie')) //current selected movie
     const [curSlot, setCurSlot] = useState(localStorage.getItem('current-slot'))    //current selected time slot
@@ -27,7 +28,7 @@ const Booking = () => {
         }
     }, [])
 
-    const onChangeNoOfSeat = (e) => {    // updating 'curSeatCount' and adding it in local storage on change of seat no.
+    const onChangeNoOfSeat = (e) => {    // updating 'curSeatCount' and adding it in local storage on change of no of seat
         setCurSeatCount({ ...curSeatCount, [e.target.name]: e.target.value })
         localStorage.setItem('seats', JSON.stringify({ ...curSeatCount, [e.target.name]: e.target.value }))
     }
@@ -42,7 +43,7 @@ const Booking = () => {
             body: JSON.stringify({ movie: curMovie, slot: curSlot, seats: curSeatCount })
         })
 
-        if (res.status === 200) {  //setting the Last booking details and clearing data from localStorage and updating states on successful booking.
+        if (res.status === 200) {  //setting the Last booking details, clearing data from localStorage and updating states on successful booking.
             setBookingDetails({
                 movie: curMovie,
                 slot: curSlot,
