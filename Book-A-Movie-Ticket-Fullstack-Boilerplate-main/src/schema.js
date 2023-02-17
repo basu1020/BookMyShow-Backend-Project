@@ -1,8 +1,14 @@
 const { Schema } = require('mongoose');
 
 const bookMovieSchema = new Schema({
-    movie: Schema.Types.String,
-    slot: Schema.Types.String,
+    movie: {
+        type: String,
+        required: true
+    },
+    slot: {
+        type: String,
+        required: true
+    },
     seats: {
         A1: Schema.Types.Number,
         A2: Schema.Types.Number,
@@ -14,3 +20,5 @@ const bookMovieSchema = new Schema({
 })
 
 exports.bookMovieSchema = bookMovieSchema;
+
+// --timeout 60000
