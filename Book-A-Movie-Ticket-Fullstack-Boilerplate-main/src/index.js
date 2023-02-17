@@ -12,7 +12,6 @@ app.use(cors())
 
 app.post('/api/booking', async (req, res) => {
     try {
-       
         bookingDetails = await connection.create({   // creating new booking details.
             movie : req.body.movie,
             slot: req.body.slot,
@@ -40,7 +39,6 @@ app.get('/api/booking', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}!`)
-    console.log(app.routes)
 });
 
 module.exports = app;   

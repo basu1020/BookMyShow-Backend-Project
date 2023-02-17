@@ -21,4 +21,3 @@ const bookMovieSchema = new Schema({
 
 exports.bookMovieSchema = bookMovieSchema;
 
-// --timeout 60000
