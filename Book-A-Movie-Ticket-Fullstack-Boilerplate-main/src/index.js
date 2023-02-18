@@ -1,5 +1,4 @@
 const express = require("express");
-const { body } = require('express-validator'); //importing to validate requests
 const app = express();
 const bodyParser = require("body-parser");
 const port = 8080;
@@ -10,30 +9,37 @@ const { connection } = require("./connector");
 const cors = require('cors');
 app.use(cors())
 
+
+// creating new booking details.
 app.post('/api/booking', async (req, res) => {
     try {
-        bookingDetails = await connection.create({   // creating new booking details.
-            movie : req.body.movie,
+        bookingDetails = await connection.create({
+            movie: req.body.movie,
             slot: req.body.slot,
             seats: req.body.seats
         })
-        res.status(200).json({bookingDetails})
+        res.status(200).json({ bookingDetails })
 
     } catch (error) {
         console.error(error)
-        res.status(400).json({error: error.array()})
+        res.status(400).json({ error: error.array() })
     }
 })
 
+// fetching last booking and returning message if there isn't any.
 app.get('/api/booking', async (req, res) => {
-    
-    // fetching last booking or returning message if there isn't any.
-    const bookings = await connection.findOne().sort({}).limit(1) //this method is fetching last item from database.
-    if (bookings) {
-        res.json({lastBooking}) 
-    }
-    else {
-        res.json({message: "no previous booking found"})
+
+    try {
+        //this method is fetching last item from database.
+        const lastBooking = await connection.findOne({}).sort({ _id: -1 }).exec()
+        if (lastBooking) {
+            res.status(200).json(lastBooking)
+        }
+        else {
+            res.status(200).json({ message: "no previous booking found" })
+        }
+    } catch (error) {
+        res.status(400).json({ error: "Bad request detected" })
     }
 })
 

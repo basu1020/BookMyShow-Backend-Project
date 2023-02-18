@@ -9,7 +9,6 @@ const LastBooking = (props) => {  //receives props about booking details from <B
             <h4>Last Booking Details</h4>
                 {bookingDetails.movie && (
                     <div>
-                        
                         <b>seats</b>
                         <p>A1 : {bookingDetails.seats.A1}</p>
                         <p>A2 : {bookingDetails.seats.A2}</p>
@@ -21,7 +20,6 @@ const LastBooking = (props) => {  //receives props about booking details from <B
                         <p>movie: {bookingDetails.movie}</p>
                     </div>)}
                 {!bookingDetails.movie && <p>no previous booking found</p>} 
-
             </div>
         </>
     )

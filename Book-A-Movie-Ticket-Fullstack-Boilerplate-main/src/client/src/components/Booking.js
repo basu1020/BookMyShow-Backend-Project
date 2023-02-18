@@ -12,15 +12,25 @@ const Booking = () => {
     const [bookingDetails, setBookingDetails] = useState({ movie: null, slot: null, seat: { A1: "0", A2: "0", A3: "0", A4: "0", D1: "0", D2: "0" } })
 
     const fetchLastBooking = async () => {  // fetches the last booking and updates booking details
-        let response = await fetch('http://localhost:8080/api/booking')
-        let data = await response.json()
-        setBookingDetails(data.lastBooking)
+        try {
+            const response = await fetch('http://localhost:8080/api/booking')
+            const data = await response.json()
+            if(data){
+                console.log(data)
+                setBookingDetails(data)
+            }
+        } catch (error) {
+            console.log(error)
+            setBookingDetails({ movie: null })
+        }
     }
 
     useEffect(() => {
-        fetchLastBooking()  //fetching the last booking
+        //fetching the last booking
+        fetchLastBooking()  
 
-        if (!localStorage.getItem('seats')) {  //setting the seats in local storage if its not there and setting the 'curSeatCount' state if its there. 
+        //setting the seats in local storage if its not there and setting the 'curSeatCount' state if its there.
+        if (!localStorage.getItem('seats')) {   
             localStorage.setItem('seats', JSON.stringify(defaultSeatCount))
         }
         else {
