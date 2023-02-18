@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=16.17.1"
+  },
   "scripts": {
     "test": "mocha '__tests__/*.test.js' --recursive --timeout 6000 -exit",
     "run": "node ./index.js",
