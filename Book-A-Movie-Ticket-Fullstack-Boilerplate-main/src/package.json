@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha '__tests__/*.test.js' --recursive --timeout 6000 -exit",
     "run": "node ./index.js",
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "build": "npm run build:backend",
+    "build:backend": "npm install && cd src && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
