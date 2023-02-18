@@ -4,7 +4,7 @@ const mongodb = require('mongodb');
 const mongoURI = process.env.MONGO_URI 
 
 let mongoose = require('mongoose');
-const { bookMovieSchema } = require('./schema')
+const { bookMovieSchema } = require('../schema')
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
     .then(() => { console.log("connection established with mongodb server online"); })
