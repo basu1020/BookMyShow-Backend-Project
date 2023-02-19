@@ -1,4 +1,5 @@
 const { Schema } = require('mongoose');
+const mongoose = require('mongoose')
 
 const bookMovieSchema = new Schema({
     movie: {
@@ -19,5 +20,6 @@ const bookMovieSchema = new Schema({
     }
 })
 
+exports.BookMovieTickets = new mongoose.model('bookmovieticket', bookMovieSchema)
 exports.bookMovieSchema = bookMovieSchema;
 
