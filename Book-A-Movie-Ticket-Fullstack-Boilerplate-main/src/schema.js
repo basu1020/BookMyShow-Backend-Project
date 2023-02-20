@@ -20,6 +20,6 @@ const bookMovieSchema = new Schema({
     }
 })
 
-exports.BookMovieTickets = new mongoose.model('bookmovieticket', bookMovieSchema)
+exports.BookMovieTickets = new mongoose.model('bookmovieticket', bookMovieSchema) // for tests
 exports.bookMovieSchema = bookMovieSchema;
 

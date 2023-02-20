@@ -1,10 +1,12 @@
 // tests for schema model
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 const { BookMovieTickets }  = require('../schema')
 
 const db = require('./db')
 
-beforeAll(async () => await db.connect())
+beforeAll(async () => {
+    await db.connect()
+})
 
 afterEach(async () => await db.clearDatabase())
 

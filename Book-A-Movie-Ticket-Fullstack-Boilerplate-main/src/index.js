@@ -10,7 +10,6 @@ const { connection } = require("./connector");
 const cors = require('cors');
 app.use(cors())
 
-
 // creating new booking details.
 app.post('/api/booking', async (req, res) => {
     try {
@@ -22,7 +21,7 @@ app.post('/api/booking', async (req, res) => {
         res.status(200).json({ bookingDetails })
 
     } catch (error) {
-        console.error(error)
+        console.error(error, "idhar hua error")
         res.status(400).json({ error: error.array() })
     }
 })
