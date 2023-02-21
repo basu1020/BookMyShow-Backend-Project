@@ -13,7 +13,7 @@ const Booking = () => {
 
     const fetchLastBooking = async () => {  // fetches the last booking and updates booking details
         try {
-            const response = await fetch('http://localhost:8080/api/booking')
+            const response = await fetch('https://bookmyshow-backend-project-production.up.railway.app/api/booking')
             const data = await response.json()
             if(data){
                 console.log(data)
@@ -45,7 +45,7 @@ const Booking = () => {
 
     const onClickBookNow = async () => {  // actions taken on clicking 'Book Now' button. 
 
-        const res = await fetch('http://localhost:8080/api/booking', {  //POSTing on the api :)
+        const res = await fetch('https://bookmyshow-backend-project-production.up.railway.app/api/booking', {  //POSTing on the api :)
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
