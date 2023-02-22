@@ -9,6 +9,6 @@ This directory consists of the frontend logic source.
 ## Overview of the /components folder 
 
 `/components` folder has three JS files - `App.js`, `Booking.js` and `LastBooking.js`
-- `Booking.js` has all the functionality of booking new movie 
+- `Booking.js` has all the functionality of booking new movie, storing data in localhost and getting the last movie booked from the API.  
 - whereas  `LastBooking.js` is the child component where the "last booked movie" details is displayed which is recieved as **props**. 
  
