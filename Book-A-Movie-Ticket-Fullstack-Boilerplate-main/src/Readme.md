@@ -28,14 +28,14 @@ Frontend part for this project can be found in the `client` folder. Frontend is 
 - To get started with this project, you'll need to have **Node.js** installed on your computer. 
 - You need to clone this repository after that
 
-      `git clone {this URL}`
+      git clone {this URL}
 
 - You You'll also need to install the project's dependencies using the following command:
 
-      `npm install`
+      npm install
 
 - Once you've installed the dependencies, you can start the server by running the following command:
 
-       `npm start`
+       npm start
 
 - This will start the server on **port 8080** by default. 
