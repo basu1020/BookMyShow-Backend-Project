@@ -6,7 +6,7 @@
 
 This directory consists of frontend code for this project. 
  - Build files which are used to deploy this project are in folder `dist` 
- - Source files where the **ReactJS** logic is written can be found in folder `src`
+ - Source files with **ReactJS** logic and its documentation can be found in folder `src`
 
 ## Additional Files 
 
