@@ -4,14 +4,20 @@ import LastBooking from './LastBooking';
 
 const Booking = () => {
 
-    const defaultSeatCount = { A1: "0", A2: "0", A3: "0", A4: "0", D1: "0", D2: "0" } // default seat count
-    const [curMovie, setCurMovie] = useState(localStorage.getItem('current-movie')) //current selected movie
-    const [curSlot, setCurSlot] = useState(localStorage.getItem('current-slot'))    //current selected time slot
-    const [curSeat, setCurSeat] = useState(localStorage.getItem('current-seat'))    //current selected seat 
+    // default seat count
+    const defaultSeatCount = { A1: "0", A2: "0", A3: "0", A4: "0", D1: "0", D2: "0" } 
+
+     // State hooks that store current selected movie, slot, seat, and seat count.
+    const [curMovie, setCurMovie] = useState(localStorage.getItem('current-movie')) 
+    const [curSlot, setCurSlot] = useState(localStorage.getItem('current-slot'))
+    const [curSeat, setCurSeat] = useState(localStorage.getItem('current-seat'))    
     const [curSeatCount, setCurSeatCount] = useState({})
+
+     // State hook that stores the booking details.
     const [bookingDetails, setBookingDetails] = useState({ movie: null, slot: null, seat: { A1: "0", A2: "0", A3: "0", A4: "0", D1: "0", D2: "0" } })
 
-    const fetchLastBooking = async () => {  // fetches the last booking and updates booking details
+    // This function fetches the last booking and updates booking details.
+    const fetchLastBooking = async () => {  
         try {
             const response = await fetch('https://bookmyshow-backend-project-production.up.railway.app/api/booking')
             const data = await response.json()
@@ -25,8 +31,9 @@ const Booking = () => {
         }
     }
 
+    // This effect hook is responsible for fetching the last booking and setting the seats in local storage
+    // if they're not already there. If the seats are already in local storage, then it sets the "curSeatCount" state.
     useEffect(() => {
-        //fetching the last booking
         fetchLastBooking()  
 
         //setting the seats in local storage if its not there and setting the 'curSeatCount' state if its there.
@@ -38,12 +45,14 @@ const Booking = () => {
         }
     }, [])
 
-    const onChangeNoOfSeat = (e) => {    // updating 'curSeatCount' and adding it in local storage on change of no of seat
+     // updating 'curSeatCount' and adding it in local storage on change of no of seat
+    const onChangeNoOfSeat = (e) => {   
         setCurSeatCount({ ...curSeatCount, [e.target.name]: e.target.value })
         localStorage.setItem('seats', JSON.stringify({ ...curSeatCount, [e.target.name]: e.target.value }))
     }
 
-    const onClickBookNow = async () => {  // actions taken on clicking 'Book Now' button. 
+    // actions taken on clicking 'Book Now' button.
+    const onClickBookNow = async () => {   
 
         const res = await fetch('https://bookmyshow-backend-project-production.up.railway.app/api/booking', {  //POSTing on the api :)
             method: 'POST',
@@ -53,7 +62,8 @@ const Booking = () => {
             body: JSON.stringify({ movie: curMovie, slot: curSlot, seats: curSeatCount })
         })
 
-        if (res.status === 200) {  //setting the Last booking details, clearing data from localStorage and updating states on successful booking.
+        //setting the Last booking details, clearing data from localStorage and updating states on successful booking.
+        if (res.status === 200) {  
             setBookingDetails({
                 movie: curMovie,
                 slot: curSlot,

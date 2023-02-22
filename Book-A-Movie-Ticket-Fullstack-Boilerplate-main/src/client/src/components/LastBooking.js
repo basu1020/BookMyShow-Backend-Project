@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const LastBooking = (props) => {  //receives props about booking details from <Booking> component
     const { bookingDetails } = props
