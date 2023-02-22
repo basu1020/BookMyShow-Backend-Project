@@ -39,3 +39,6 @@ Frontend part for this project can be found in the `client` folder. Frontend is 
        npm start
 
 - This will start the server on **port 8080** by default. 
+
+## Demo 
+Here's a youtube video link demonstrating how everything works - https://www.youtube.com/watch?v=VTutbP89TjQ&t=20s  
