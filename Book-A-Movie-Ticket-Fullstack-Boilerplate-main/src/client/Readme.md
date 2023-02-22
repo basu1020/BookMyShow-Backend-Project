@@ -14,4 +14,4 @@ This directory consists of frontend code for this project.
 Some other files in this directory 
 - `.babelrc` - config file for babel. 
 - `webpack.config.js` - config file for webpack for this project. 
-- `package.json` and `package-lock.json` - containing information files about Node.js. 
+- `package.json` and `package-lock.json` - containing information about Node.js. 
