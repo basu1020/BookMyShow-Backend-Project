@@ -15,7 +15,7 @@ app.get('/', async (req, res) => {
     res.status(200).json({
         message: "Hi, this is my Book My Show Project's Backend.",
         howToGET: "Use method GET at the endpoint /api/booking to get the last booking.",
-        howToPOST: "Use method POST to post new movie bookng details."
+        howToPOST: "Use method POST at the endpoint /api/booking to post new movie bookng details."
     })
 })
 
