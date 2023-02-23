@@ -1,5 +1,5 @@
 # Book-A-Movie-Ticket Fullstack Backend API Project
-This is a full-stack boilerplate project for booking movie tickets, including both the front-end and back-end components. This README file covers the **back-end API component** of the project.
+This is a full-stack project for booking movie tickets, including both the front-end and back-end components. This README file covers the **back-end API component** of the project.
 The API provides endpoints for booking movie tickets, viewing last booking. You can access the API using any HTTP client, such as **curl** or **Postman**.
 
 Link to this API - https://bookmyshow-backend-project-production.up.railway.app/
@@ -30,7 +30,7 @@ Frontend part for this project can be found in the `client` folder. Frontend is 
 
       git clone {this URL}
 
-- You You'll also need to install the project's dependencies using the following command:
+- You'll also need to install the project's dependencies using the following command:
 
       npm install
 
@@ -39,3 +39,6 @@ Frontend part for this project can be found in the `client` folder. Frontend is 
        npm start
 
 - This will start the server on **port 8080** by default. 
+
+## Demo 
+Here's a youtube video link demonstrating how everything works - https://www.youtube.com/watch?v=VTutbP89TjQ&t=20s  
