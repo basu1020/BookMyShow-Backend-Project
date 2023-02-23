@@ -1,5 +1,5 @@
 # Book-A-Movie-Ticket Fullstack Backend API Project
-This is a full-stack boilerplate project for booking movie tickets, including both the front-end and back-end components. This README file covers the **back-end API component** of the project.
+This is a full-stack project for booking movie tickets, including both the front-end and back-end components. This README file covers the **back-end API component** of the project.
 The API provides endpoints for booking movie tickets, viewing last booking. You can access the API using any HTTP client, such as **curl** or **Postman**.
 
 Link to this API - https://bookmyshow-backend-project-production.up.railway.app/
