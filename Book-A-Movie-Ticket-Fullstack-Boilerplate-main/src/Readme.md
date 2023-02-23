@@ -30,7 +30,7 @@ Frontend part for this project can be found in the `client` folder. Frontend is 
 
       git clone {this URL}
 
-- You You'll also need to install the project's dependencies using the following command:
+- You'll also need to install the project's dependencies using the following command:
 
       npm install
 
